@@ -4,10 +4,12 @@ import google.generativeai as genai
 st.set_page_config(page_title="Benim Yapay Zekam", page_icon="🤖")
 st.title("Kişisel Yapay Zeka Botuma Hoş Geldin! 💬")
 
-# YENİ API Anahtarını Buraya Yaz
-GOOGLE_API_KEY = "AIzaSyB_dORdtYw3A65trWq_cH0M4CPhCOLD7n8"
+# 1. YEPYENİ ALDIĞIN API ANAHTARINI BURAYA YAZ (Tırnakları silme!)
+GOOGLE_API_KEY = "AIzaSyAMTnJ-kKLhnZD45t_Uq86p8jqh_gRC5HE"
 genai.configure(api_key=GOOGLE_API_KEY)
-model = genai.GenerativeModel('gemini-pro')
+
+# 2. Google'ın şu anki en güncel ve kesin çalışan modelini çağırıyoruz
+model = genai.GenerativeModel('gemini-2.0-flash')
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
@@ -22,7 +24,6 @@ if prompt := st.chat_input("Bana bir şeyler yaz..."):
         st.markdown(prompt)
 
     with st.chat_message("assistant"):
-        # Hata gizleme kısmını kaldırdık, artık sistemi doğrudan çalıştırıyoruz
         response = model.generate_content(prompt)
         st.markdown(response.text)
         st.session_state.messages.append({"role": "assistant", "content": response.text})
