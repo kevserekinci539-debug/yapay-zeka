@@ -5,7 +5,7 @@ st.set_page_config(page_title="Benim Yapay Zekam", page_icon="🤖")
 st.title("Kişisel Yapay Zeka Botuma Hoş Geldin! 💬")
 
 # 1. YEPYENİ ALDIĞIN API ANAHTARINI BURAYA YAZ (Tırnakları silme!)
-GOOGLE_API_KEY = "AIzaSyAMTnJ-kKLhnZD45t_Uq86p8jqh_gRC5HE"
+GOOGLE_API_KEY = "AIzaSyB_mBFv0rNSdeFAZKYogHKENgNpdRk5l2w"
 genai.configure(api_key=GOOGLE_API_KEY)
 
 # 2. Google'ın şu anki en güncel ve kesin çalışan modelini çağırıyoruz
